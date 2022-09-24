@@ -1,0 +1,38 @@
+.navbar-nav>li>a {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 21px 0.5rem;
+    color: #232323;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition-duration: 500ms;
+}
+.navbar-nav ul {
+    position: absolute;
+    opacity: 0;
+}
+.navbar ul ul li {
+    transition: all 7s ease;
+    margin-bottom: 12px;
+    padding: 0 20px;
+}
+.navbar ul ul li:last-child {
+    margin-bottom: 0;
+}
+.navbar-nav li>ul {
+    padding: 15px 0;
+    margin: 0 0 0 10px;
+    background: aqua;
+    max-width: 225px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.navbar-nav li:hover>ul {
+    opacity: 1;
+}
+.navbar li>ul ul {
+    margin-top: -39px;
+    margin-left: 0px;
+    width: 100% !important;
+}

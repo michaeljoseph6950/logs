@@ -63,6 +63,7 @@ auth.onAuthStateChanged(user => {
 
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -81,6 +82,7 @@ auth.onAuthStateChanged(user => {
 
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
@@ -96,6 +98,7 @@ auth.onAuthStateChanged(user => {
 
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
         jinaHolder3.value = user.phoneNumber;
@@ -111,6 +114,7 @@ auth.onAuthStateChanged(user => {
 
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} else 	if (user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;

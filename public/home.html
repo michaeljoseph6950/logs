@@ -1749,8 +1749,12 @@
                     <img src="img/content/tenor.gif" class="letsgo"/>
                 </h4>
             </div>
-            <form onsubmit="addItem(event)">
-                <input type="text" class="form-control add-task" value="Add new comment..." onclick="clearInput()" id="todo-input">
+            <form onsubmit="addItem(event)" id="todo-form">
+                <input type="text" class="form-control" value="Type new comment..." onclick="clearInput()" id="todo-input">
+                <button class="butn" id="todo-btn" type="submit">
+                    Add
+                    <i class="fas fa-comment-alt"></i>
+                </button>
             </form>
 
             <div class="todo-items" style="margin-top: 15px;">

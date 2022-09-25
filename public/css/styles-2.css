@@ -117,7 +117,7 @@ a:active {
 .text-theme-color {
   color: #03a9f5;
 }
-.add-task {
+#todo-input {
   box-shadow: 0 1px 3px 0 #03a9f5 !important;
   border: 0.7px solid #03a9f5 !important;
 }

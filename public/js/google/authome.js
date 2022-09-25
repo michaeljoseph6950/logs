@@ -616,18 +616,21 @@ function generateItems(items) {
 	document.querySelector(".todo-items").replaceChildren(...todoItems);
 }
 
-
+function clearInput() {
+	document.getElementById('todo-input').value = '';
+}
 
 function addItem(event) {
 	event.preventDefault();
 	let text = document.getElementById("todo-input");
-	let newItem = db.collection("todo-items").add({
-		text: text.value,
-		status: "active"
-	})
+	if(text.value !== '' && text.value !== 'Type new comment...') {
+		let newItem = db.collection("todo-items").add({
+			text: text.value,
+			status: "active"
+		})
+	}
 	text.value = "";
 }
-
 function markCompleted(id) {
 	let item = db.collection("todo-items").doc(id);
 	item.get().then(function(doc) {

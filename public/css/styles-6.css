@@ -116,7 +116,7 @@ a:active {
 .navbar-nav > li {
   background-color: rgba(208, 173, 85, 0.4);
 }
-.add-task {
+#todo-input {
   box-shadow: 0 1px 3px 0 #d0ad55 !important;
   border: 0.7px solid #d0ad55 !important;
 }

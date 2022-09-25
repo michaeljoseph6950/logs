@@ -29,6 +29,10 @@
     content:"\f555"
 }
 
+.fa-comment-alt:before {
+    content:"\f27a"
+}
+
 .fa-piggy-bank:before {
     content:"\f4d3"
 }

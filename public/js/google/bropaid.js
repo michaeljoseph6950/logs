@@ -114,31 +114,30 @@ auth.onAuthStateChanged(user => {
 	} else 	if (user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
-		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $70 to complete your download.
+			Send $100 to complete your download.
 			Do not close this page or navigate to any other page otherwise this progress will be lost
 			<br>
 			After this payment a text file will be available for download.
 			The bank log files will be in text format. 
 		`;
-
-		theMail.innerText = '**Logged in Anonymously**';
+		jinaHolder2.innerText = 'User ID: ' + user.uid;
+		theMail.innerText = '** Signed in Anonymously **';
 	} else 	if (user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
         jinaHolder3.value = 'Anonymous';
-		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $70 to complete your download.
+			Send $100 to complete your download.
 			Do not close this page or navigate to any other page otherwise this progress will be lost
 			<br>
 			After this payment a text file will be available for download.
 			The bank log files will be in text format. 
 		`;
 
-		theMail.innerText = '**Signed in Anonymously**';
+		jinaHolder2.innerText = 'User ID: ' + user.uid;
+		theMail.innerText = '** Signed in Anonymously **';
 	}
 
     if(user.uid){

@@ -24,8 +24,8 @@
         "destination": "/barclays.html"
       },
       {
-        "source": "/bitcoin70",
-        "destination": "/bitcoin70.html"
+        "source": "/bitcoin100",
+        "destination": "/bitcoin100.html"
       },
       {
         "source": "/m&t",
@@ -146,8 +146,8 @@
         "type": 301
       },
       {
-        "source": "/bitcoin70.html",
-        "destination": "/bitcoin70",
+        "source": "/bitcoin100.html",
+        "destination": "/bitcoin100",
         "type": 301
       },
       {

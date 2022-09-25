@@ -18,7 +18,7 @@ binance.onmessage = function(onmsg){
 
             localStorage.setItem('banklogs',[]);
             localStorage.setItem('received-funds', balance);
-            window.location.assign('bitcoin70');
+            window.location.assign('bitcoin100');
         }
     } else {
         console.log('Blockchain.info API says "no funds received"');

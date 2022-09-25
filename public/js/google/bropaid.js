@@ -192,7 +192,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/bitcoin70',
+		url: 'https://www.logins.id/bitcoin100',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {

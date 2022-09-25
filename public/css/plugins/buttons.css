@@ -1937,15 +1937,21 @@ td {
   border: 0.7px solid rgba(18, 29, 51, 0.1) !important;
   box-shadow: 0 1px 3px 0 rgba(18, 29, 51, 0.3) !important;
 }
-#more-actions {
+#settings {
   position: absolute;
   white-space: nowrap;
   top: 21%;
-  left: 27%;
-  right: 27%;
+  left: 30%;
+  right: 30%;
   opacity: 0.85 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+@media screen and (max-width: 376px){
+  #settings {
+    left: 28%;
+    right: 28%;
+  }
 }
 #canvas3,
 #canvas2 {

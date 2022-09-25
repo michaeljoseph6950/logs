@@ -33,6 +33,10 @@
     content:"\f27a"
 }
 
+.fa-closed-captioning:before {
+    content:"\f20a"
+}
+
 .fa-piggy-bank:before {
     content:"\f4d3"
 }

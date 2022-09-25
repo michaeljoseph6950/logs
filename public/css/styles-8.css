@@ -75,7 +75,7 @@ a:active {
   }
   .navbar-toggler {
     border: 1.4px solid #16a086;
-    box-shadow: 0 0 0 1.4px rgb(139, 208, 195)
+    box-shadow: 0 0 0 1.4px rgb(100, 192, 174)
   }
   .navbar-toggler:after {
     border-bottom: 2.5px solid #16a086;

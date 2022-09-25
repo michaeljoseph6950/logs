@@ -131,9 +131,7 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
                 document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
             }
         }
-    } else {
-        console.log('Hello')
-    }
+    } 
 
     addToLocalStorage(price, balance, account,website,image,info1,info2,info3,info4,info5,info6);
 

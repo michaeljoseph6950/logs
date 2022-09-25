@@ -230,12 +230,7 @@ section .dataTables_wrapper dataTables_length {
       width: 85px !important;
     }
   }
-  @media screen and (min-width: 1025px) {
-    #vpnModal .modal-content {
-      max-width: 31vw !important;
-    }
-}
-
+  
 #jinaHolder3 {
 	position: absolute !important;
 	left: 25% !important;

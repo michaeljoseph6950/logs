@@ -188,6 +188,7 @@ blink.high {
   border: 1.4px solid rgba(208, 173, 85, 0.8);
   background: rgb(246, 239, 221);
 }
+#jinaHolder4,
 #jinaHolder3 {
   border: 1.4px solid rgb(56, 58, 58) !important;
 }
@@ -195,6 +196,7 @@ blink.high {
 .gta-boa {
   border: 1.4px solid rgba(208, 173, 85, 0.7);
 }
+#the-pic2,
 #the-pic {
   border: 1.4px solid rgba(208, 173, 85, 0.7);
 }
@@ -212,6 +214,9 @@ blink.high {
 #the-date,
 #the-name,
 #the-mail,
+#the-mail2,
+#the-id2,
+#the-date2,
 #nameBro1,
 #nameBro2,
 #nameBro3,
@@ -328,6 +333,7 @@ blink.high {
   border: 1.4px solid rgba(208, 173, 85, 0.85);
   background: rgba(208, 173, 85, 0.73);
 }
+#canvas3,
 #canvas,
 #canvas2 {
   border: 1.4px solid #d0ad55;

@@ -22,6 +22,7 @@ const avatarHolder = document.getElementById("avatar");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById("jinaHolder2");
 const jinaHolder3 = document.getElementById('jinaHolder3');
+const jinaHolder4 = document.getElementById('jinaHolder4');
 
 const nameHolder1 = document.getElementById('nameBro1');
 const nameHolder2 = document.getElementById('nameBro2');
@@ -32,6 +33,20 @@ const email5 = document.getElementById('yourEmail5');
 
 const displayNameField2 = document.getElementById('text2');
 const editButton2 = document.getElementById('copy2');
+
+const theMail = document.getElementById('the-mail');
+const theId2 = document.getElementById('the-id2');
+const thePic2 = document.getElementById('the-pic2');
+const thenoPic2 = document.getElementById('the-nopic2');
+const theDate2 = document.getElementById('the-date2');
+
+const labelMail = document.getElementById('label-mail2');
+
+const mailField = document.getElementById('exampleInputEmail');
+const signUp = document.getElementById('signUp');
+
+const signGoogle = document.getElementById("signGoogle");
+const signYahoo = document.getElementById('signYahoo');
 
 
 const auth = firebase.auth();
@@ -46,13 +61,17 @@ auth.onAuthStateChanged(user => {
 		avatarHolder.style.display = 'block';
 		thePic.setAttribute("src", user.photoURL);
 		thePic.style.display = 'inline-block';
+		thePic2.setAttribute("src", user.photoURL);
+		thePic2.style.display = 'inline-block';
 	} else if (!user.photoURL) {
 		logoHolder.style.display = 'block';
 		thenoPic.style.display = 'inline-block';
+		thenoPic2.style.display = 'inline-block';
 	}
 	if (user.displayName && user.email) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
+		jinaHolder4.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = user.displayName;
 		nameHolder2.value = user.displayName;
@@ -67,12 +86,17 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = user.displayName;
 			}
 		}
+
+		theMail.innerText = user.email;
+		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 
 		jinaHolder.value = theaddress;
 		jinaHolder3.value = theaddress;
+		jinaHolder4.value = theaddress;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = theaddress;
 		nameHolder2.value = theaddress;
@@ -87,9 +111,14 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = theaddress;
 			}
 		}
+
+		theMail.innerText = user.email;
+		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	} if (user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
+		jinaHolder4.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = user.displayName;
 		nameHolder2.value = user.displayName;
@@ -104,9 +133,14 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = user.displayName;
 			}
 		}
+
+		labelMail.innerText = "Your Phone Number:";
+		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	}  if (user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder3.value = user.phoneNumber;
+		jinaHolder4.value = user.phoneNumber;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = user.phoneNumber;
 		nameHolder2.value = user.phoneNumber;
@@ -121,9 +155,14 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = user.phoneNumber;
 			}
 		}
+
+		labelMail.innerText = "Your Phone Number:";
+		document.getElementById('sunset-fyde').style.display = 'none';
+		document.getElementById('email-hr').style.display = 'none';
 	}  else if (user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
+		jinaHolder4.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = user.displayName;
 		nameHolder2.value = user.displayName;
@@ -138,9 +177,12 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = user.displayName;
 			}
 		}
+
+		theMail.innerText = '** Signed in Anonymously **';
 	} else 	if (user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
 		jinaHolder3.value = 'Anonymous';
+		jinaHolder4.value = 'Anonymous';
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		nameHolder1.value = 'Anonymous';
 		nameHolder2.value = 'Anonymous';
@@ -155,11 +197,15 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = 'Anonymous';
 			}
 		}
+
+		theMail.innerText = '** Signed in Anonymously **';
 	}
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
+		theId2.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
+		theDate2.innerHTML = new Date(user.metadata.b * 1);
 	}
 
 	if(platform.manufacturer !== null) {
@@ -175,8 +221,7 @@ auth.onAuthStateChanged(user => {
 	}
 });
 
-
-const logOut = document.getElementById('logout');
+const logOut = document.getElementById('sign-out');
 logOut.addEventListener('click', () => {
     if(auth.currentUser.isAnonymous) {
 		auth.currentUser.delete()
@@ -197,13 +242,140 @@ logOut.addEventListener('click', () => {
 	}
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const sendVerificationEmail = () => {
+	auth.currentUser.sendEmailVerification()
+}
+
+const signUpFunction = () => {
+	event.preventDefault();
+	const email = mailField.value;
+	var actionCodeSettings = {
+		url: 'https://www.logins.id/home',
+		handleCodeInApp: true,
+	};
+	if(email.includes('@gmail.com')) {
+		const googleProvider = new firebase.auth.GoogleAuthProvider;
+		auth.signInWithPopup(googleProvider).then(() => {
+			sendVerificationEmail();
+			window.location.reload();
+		}).catch(error => {
+			alert(error.message)
+		});
+	} else if(email.includes('@yahoo.com')) {
+		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+		auth.signInWithPopup(yahooProvider).then(() => {
+			sendVerificationEmail();
+			window.location.reload();
+		}).catch(error => {
+			alert(error.message);
+		})
+	} else {
+		auth.sendSignInLinkToEmail(email, actionCodeSettings)
+		.then(() => {
+			alert('Verification link sent to your email ' + email + " check the spam / junk folder");
+			window.localStorage.setItem('emailForSignIn', email);
+		})
+		.catch(error => {
+			alert(error.message);
+		});
+	}
+}
+signUp.addEventListener('click', signUpFunction);
+document.getElementById('the-form').addEventListener('submit', signUpFunction);
+
+const signInWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		sendVerificationEmail();
+		window.location.reload();
+	}).catch(error => {
+		alert(error.message)
+	});
+};
+signGoogle.addEventListener("click", signInWithGoogle);
+
+const signInWithYahoo = () => {
+	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+	auth.signInWithPopup(yahooProvider).then(() => {
+		sendVerificationEmail();
+		window.location.reload();
+	}).catch(error => {
+		alert(error.message);
+	})
+}
+signYahoo.addEventListener("click", signInWithYahoo);
+
+if (auth.isSignInWithEmailLink(window.location.href)) {
+	var email = window.localStorage.getItem('emailForSignIn');
+	if (!email) {
+		localStorage.setItem('the-email', true)
+		email = window.prompt('Enter your email for confirmation');
+	}
+	auth.signInWithEmailLink(email, window.location.href)
+		.then((result) => {
+			if (localStorage.getItem('the-email')) {
+				sendVerificationEmail();
+				window.location.reload();
+			} else {
+				alert('Return to previous tab, email has been confirmed');
+				sendVerificationEmail();
+				window.close();
+			}
+		})
+		.catch((error) => {
+			console.log('Wrong email entered')
+		});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 jinaHolder.addEventListener("change", () => {
 	auth.currentUser.updateProfile({
 		displayName: jinaHolder.value
 	})
 	.then(() => {
 		alert('Display Name Updated Successfully !');
-		jinaHolder3.value = jinaHolder.value
+		jinaHolder3.value = jinaHolder.value;
+		jinaHolder4.value = jinaHolder.value;
 	})
 	.catch(error => {
 		jinaHolder.focus();
@@ -217,9 +389,24 @@ jinaHolder3.addEventListener("change", () => {
 	.then(() => {
 		alert('Display Name Updated Successfully !');
 		jinaHolder.value = jinaHolder3.value;
+		jinaHolder4.value = jinaHolder3.value;
 	})
 	.catch(error => {
 		jinaHolder3.focus();
+	})
+});
+
+jinaHolder4.addEventListener("change", () => {
+	auth.currentUser.updateProfile({
+		displayName: jinaHolder4.value
+	})
+	.then(() => {
+		alert('Display Name Updated Successfully !');
+		jinaHolder.value = jinaHolder4.value;
+		jinaHolder3.value = jinaHolder4.value;
+	})
+	.catch(error => {
+		jinaHolder4.focus();
 	})
 });
 
@@ -301,7 +488,11 @@ fetch('https://ipapi.co/json/')
 		Your IP address: ${data.ip}, ${data.city}, ${data.country_name}, ${data.org}, ${data.region}, ${data.country_calling_code}
 		<img src="https://countryflagsapi.com/png/${data.country_code}" id="the-flag" />
     `;
-	});
+	document.getElementById('label-ip').innerHTML = `
+		IP address: <span>${data.ip}</span> ${data.country_calling_code} <img src="https://countryflagsapi.com/png/${data.country_code}" id="the-flag" />
+	`;
+	document.getElementById('the-ip').innerHTML = `${data.city}, ${data.country_name}, ${data.org}, ${data.region}`;
+});
 
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
@@ -542,7 +733,7 @@ function drawTime2(ctx2, radius2) {
 	drawHand2(ctx2, second2, radius2 * 0.9, radius2 * 0.02);
 }
 
-function drawHand2(ctx, pos, length, width) {
+function drawHand2(ctx2, pos, length, width) {
 	ctx2.beginPath();
 	ctx2.lineWidth = width;
 	ctx2.lineCap = "round";
@@ -552,3 +743,112 @@ function drawHand2(ctx, pos, length, width) {
 	ctx2.stroke();
 	ctx2.rotate(-pos);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var canvas3 = document.getElementById("canvas3");
+var ctx3 = canvas3.getContext("2d");
+var radius3 = canvas3.height / 2;
+ctx3.translate(radius3, radius3);
+radius3 = radius3 * 1
+setInterval(drawClock3, 1000);
+
+function drawClock3() {
+	drawFace3(ctx3, radius3);
+	drawNumbers3(ctx3, radius3);
+	drawTime3(ctx3, radius3);
+}
+
+function drawFace3(ctx3, radius3) {
+	var grad3;
+	ctx3.beginPath();
+	ctx3.arc(0, 0, radius3, 0, 2 * Math.PI);
+	ctx3.fillStyle = 'white';
+	ctx3.fill();
+	grad3 = ctx3.createRadialGradient(0, 0, radius3 * 0.05, 0, 0, radius3 * 2.5);
+	grad3.addColorStop(0, '#121d33');
+	grad3.addColorStop(0.5, 'rgba(0,0,0,0)');
+	grad3.addColorStop(1, '#121d33');
+	ctx3.strokeStyle = grad3;
+	ctx3.lineWidth = radius3 * 0;
+	ctx3.stroke();
+	ctx3.beginPath();
+	ctx3.arc(0, 0, radius3 * 0.1, 0, 2 * Math.PI);
+	ctx3.fillStyle = '#121d33';
+	ctx3.fill();
+}
+
+function drawNumbers3(ctx3, radius3) {
+	var ang3;
+	var num3;
+	ctx3.font = radius3 * 0.33 + "px arial";
+	ctx3.textBaseline = "middle";
+	ctx3.textAlign = "center";
+	for (num3 = 1; num3 < 13; num3++) {
+		ang3 = num3 * Math.PI / 6;
+		ctx3.rotate(ang3);
+		ctx3.translate(0, -radius3 * 0.87);
+		ctx3.rotate(-ang3);
+		ctx3.fillText(num3.toString(), 0, 0);
+		ctx3.rotate(ang3);
+		ctx3.translate(0, radius3 * 0.87);
+		ctx3.rotate(-ang3);
+	}
+}
+
+function drawTime3(ctx3, radius3) {
+	var now3 = new Date();
+	var hour3 = now3.getHours();
+	var minute3 = now3.getMinutes();
+	var second3 = now3.getSeconds();
+	//hour
+	hour3 = hour3 % 12;
+	hour3 = (hour3 * Math.PI / 6) +
+		(minute3 * Math.PI / (6 * 60)) +
+		(second3 * Math.PI / (360 * 60));
+	drawHand3(ctx3, hour3, radius3 * 0.5, radius3 * 0.07);
+	//minute
+	minute3 = (minute3 * Math.PI / 30) + (second3 * Math.PI / (30 * 60));
+	drawHand3(ctx3, minute3, radius3 * 0.8, radius3 * 0.07);
+	// second
+	second3 = (second3 * Math.PI / 30);
+	drawHand3(ctx3, second3, radius3 * 0.9, radius3 * 0.02);
+}
+
+function drawHand3(ctx3, pos, length, width) {
+	ctx3.beginPath();
+	ctx3.lineWidth = width;
+	ctx3.lineCap = "round";
+	ctx3.moveTo(0, 0);
+	ctx3.rotate(pos);
+	ctx3.lineTo(0, -length);
+	ctx3.stroke();
+	ctx3.rotate(-pos);
+}
+

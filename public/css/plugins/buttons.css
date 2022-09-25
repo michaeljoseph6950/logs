@@ -259,7 +259,7 @@
  }
 }
 .scroll-to-top {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   color: #fff;
   text-decoration: none;
@@ -268,9 +268,9 @@
   right: 21px;
   display: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
   z-index: 9999;
   outline: 0;
   background: white;
@@ -1870,6 +1870,9 @@ td {
     margin: 10px 2px;
  }
 }
+#the-mail2,
+#the-id2,
+#the-date2,
 #the-id, #the-date, #the-ip, #the-name, #the-mail, #nameBro1, #nameBro2, #nameBro3, #textBro {
   font-size: 17.5px !important;
   color: rgba(255, 255, 255, 0.85) !important;
@@ -1882,14 +1885,22 @@ td {
 #the-id {
   font-size: 17px !important;
 }
+#the-mail2,
 #the-mail {
   font-size: 18px !important;
   width: 92% !important;
 }
+#the-mail2,
+#the-id2,
+#the-date2,
+
 #the-date, #the-ip, #the-id, #the-mail {
   white-space: nowrap !important;
   overflow-x: scroll !important;
 }
+#the-mail2::-webkit-scrollbar,
+#the-date2::-webkit-scrollbar,
+#the-id2::-webkit-scrollbar,
 #the-mail::-webkit-scrollbar,
 #the-date::-webkit-scrollbar, 
 #the-ip::-webkit-scrollbar,
@@ -1900,12 +1911,14 @@ td {
 #email3 {
   margin-bottom: 14px !important;
 }
+#the-pic2,
 #the-pic {
   border-radius: 50%;
   width: 70px;
   height: 70px;
   float: left !important;
 }
+#jinaHolder4,
 #jinaHolder3 {
   margin: 5px !important;
   width: 70% !important;
@@ -1934,10 +1947,12 @@ td {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+#canvas3,
 #canvas2 {
   border-radius: 50%;
   float: right !important;
 }
+#the-nopic2,
 #the-nopic {
   border-radius: 0;
   width: 70px;

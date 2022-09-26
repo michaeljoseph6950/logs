@@ -52,6 +52,10 @@ auth.onAuthStateChanged(user => {
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
+		`;
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -63,6 +67,9 @@ auth.onAuthStateChanged(user => {
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
+		`;
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
@@ -71,6 +78,9 @@ auth.onAuthStateChanged(user => {
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
 	}  else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
@@ -79,16 +89,26 @@ auth.onAuthStateChanged(user => {
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
 	} else if(user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
 	} else if(user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
 		jinaHolder3.value = 'Anonymous';
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
+
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
 	} 
 
 	if(user.uid){

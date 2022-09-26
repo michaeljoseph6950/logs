@@ -15,8 +15,6 @@ const logoHolder = document.getElementById("logo");
 const avatarHolder = document.getElementById("avatar");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById("jinaHolder2");
-const paidText = document.getElementById('paid-text');
-
 const jinaHolder3 = document.getElementById('jinaHolder3');
 
 const theMail = document.getElementById('the-mail');
@@ -34,6 +32,12 @@ const signGoogle = document.getElementById("signGoogle");
 const signYahoo = document.getElementById('signYahoo');
 
 
+if(!window.location.href.includes('ogins')){
+	if(!window.location.href.includes('5500')) {
+		window.location.assign('index')
+	}
+}
+
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
@@ -50,104 +54,72 @@ auth.onAuthStateChanged(user => {
 	}
 	if (user.displayName && user.email) {
 		jinaHolder.value = user.displayName;
+		jinaHolder3.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-        jinaHolder3.value = user.displayName;
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment check your email inbox @ <span>${user.email}</span>. 
-			The bank log files will be in text format. 
-		`;
-
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
+		`;
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 
 		jinaHolder.value = theaddress;
+		jinaHolder3.value = theaddress;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-        jinaHolder3.value = theaddress;
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment check your email inbox @ <span>${user.email}</span>. 
-			The bank log files will be in text format. 
-		`;
-
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
+		`;
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-        jinaHolder3.value = user.displayName;
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment check your text messages inbox @ <span>${user.phoneNumber}</span>. 
-			The bank log files will be sent as a link to your phone number. 
-		`;
-
+		jinaHolder3.value = user.displayName;
+		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
-	} else if(user.phoneNumber && !user.displayName) {
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
+	}  else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
-        jinaHolder3.value = user.phoneNumber;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment check your text messages inbox @ <span>${user.phoneNumber}</span>. 
-			The bank log files will be sent as a link to your phone number. 
-		`;
-
+		jinaHolder3.value = user.phoneNumber;
+		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
-	} else 	if (user.isAnonymous && user.displayName) {
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
+	} else if(user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment a text file will be available for download.
-			The bank log files will be in text format. 
-		`;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
-	} else 	if (user.isAnonymous && !user.displayName) {
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
+	} else if(user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
-        jinaHolder3.value = 'Anonymous';
-		paidText.innerHTML = `
-			The cost of acquiring tools for spamming, and also the process itself is expensive, 
-			Send $100 to complete your download.
-			Do not close this page or navigate to any other page otherwise this progress will be lost
-			<br>
-			After this payment a text file will be available for download.
-			The bank log files will be in text format. 
-		`;
-
+		jinaHolder3.value = 'Anonymous';
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
-	}
+		document.getElementById('pros').innerHTML = `
+			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
+	} 
 
-    if(user.uid){
+	if(user.uid){
 		theId.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
 	}
+
 });
 
 
@@ -170,7 +142,17 @@ logOut.addEventListener('click', () => {
 				console.error(error);
 			})
 	}
-});
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -192,7 +174,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/bitcoin',
+		url: 'https://www.logins.id/invoice',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {
@@ -295,19 +277,6 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 
 
 
-
-
-
-
-
-
-
-if(!localStorage.getItem('received-funds')) {
-	document.getElementById('logsection').style.display = 'none'
-	document.getElementById('predat').style.display = 'flex';
-} else {
-	document.getElementById('you-sent').innerText = '$' + localStorage.getItem('received-funds').toLocaleString();
-}
 
 
 

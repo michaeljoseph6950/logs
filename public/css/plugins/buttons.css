@@ -1992,6 +1992,15 @@ td {
 #todo-input::placeholder {
   color: #fff !important;
 }
+@media screen and (max-width: 767px) {
+  #todo-btn {
+    height: 55px !important;
+  }
+  #todo-input {
+    height: 55px !important;
+    padding: 20px 10px !important;
+  }
+}
 .btn-cloze{
   box-sizing:content-box;
   width:20px;

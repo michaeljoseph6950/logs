@@ -337,7 +337,10 @@ header.scrollHeader .navbar-default {
   }
   .navbar-nav .has-sub.active>.submenu-button:before {
     display:none
-}
+  }
+  .navbar-nav .has-sub.active>.submenu-button:after {
+    background: rgb(137, 15, 26)
+  }
 }
 @media screen and (max-width: 1092px) {
   .navbar-nav li.nav-small img {

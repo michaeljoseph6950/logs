@@ -189,6 +189,13 @@ blink.high {
   border: 1.4px solid rgba(73, 192, 208, 0.8);
   background: rgb(219, 242, 246);
 }
+.navbar-nav li.nav-small.open a {
+  background: #49c0d0;
+  border: 1.4px solid rgb(219, 242, 246);
+}
+.navbar-nav li.nav-small.open a::after {
+  background: rgb(219, 242, 246);
+}
 #jinaHolder4,
 #jinaHolder3 {
   border: 1.4px solid rgb(29, 62, 82) !important;

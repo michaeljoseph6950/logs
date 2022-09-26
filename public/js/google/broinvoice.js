@@ -9,6 +9,8 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+
+const auth = firebase.auth();
 const logoHolder = document.getElementById("logo");
 const avatarHolder = document.getElementById("avatar");
 const jinaHolder = document.getElementById("jinaHolder");
@@ -29,7 +31,12 @@ const signUp = document.getElementById('signUp');
 const signGoogle = document.getElementById("signGoogle");
 const signYahoo = document.getElementById('signYahoo');
 
-const auth = firebase.auth();
+
+if(!window.location.href.includes('ogins')){
+	if(!window.location.href.includes('5500')) {
+		window.location.assign('index')
+	}
+}
 
 
 auth.onAuthStateChanged(user => {
@@ -52,7 +59,6 @@ auth.onAuthStateChanged(user => {
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
-
 		document.getElementById('pros').innerHTML = `
 			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
 		`;
@@ -63,7 +69,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = theaddress;
 		jinaHolder3.value = theaddress;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-
 		theMail.innerText = user.email;
 		document.getElementById('sunset-fyde').style.display = 'none';
 		document.getElementById('email-hr').style.display = 'none';
@@ -105,7 +110,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = 'Anonymous';
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
-
 		document.getElementById('pros').innerHTML = `
 			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
 		`;
@@ -114,7 +118,12 @@ auth.onAuthStateChanged(user => {
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
+		document.getElementById('vpn').innerHTML = `
+			View Profile
+			<img src="img/partners/anonymous.png">
+		`;
 	}
+
 });
 
 
@@ -159,6 +168,8 @@ logOut.addEventListener('click', () => {
 
 
 
+
+
 const sendVerificationEmail = () => {
 	auth.currentUser.sendEmailVerification()
 }
@@ -167,7 +178,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/dashboard',
+		url: 'https://www.logins.id/invoice',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {
@@ -273,22 +284,16 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 
 
 
-
-
-
-
-
-
-
 jinaHolder.addEventListener("change", () => {
 	auth.currentUser.updateProfile({
 		displayName: jinaHolder.value
 	})
 	.then(() => {
 		alert('Display Name Updated Successfully !');
+		jinaHolder3.value = jinaHolder.value;
 	})
 	.catch(error => {
-		jinaHolder.focus();
+		jinaHolder.focus()
 	})
 });
 
@@ -316,8 +321,6 @@ fetch('https://ipapi.co/json/')
 		`;
 		document.getElementById('the-ip').innerHTML = `${data.city}, ${data.country_name}, ${data.org}, ${data.region}`;
 	});
-
-
 
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
@@ -403,6 +406,26 @@ function drawHand(ctx, pos, length, width) {
 	ctx.stroke();
 	ctx.rotate(-pos);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var canvas2 = document.getElementById("canvas2");
 var ctx2 = canvas2.getContext("2d");

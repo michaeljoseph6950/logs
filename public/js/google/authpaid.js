@@ -165,6 +165,10 @@ auth.onAuthStateChanged(user => {
     if(user.uid){
 		theId.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
+		document.getElementById('vpn').innerHTML = `
+			View Profile
+			<img src="img/partners/anonymous.png">
+		`;
 	}
 });
 

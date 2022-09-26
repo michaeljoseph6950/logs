@@ -365,8 +365,8 @@ blink.high {
 #logout,
 #vpn-nav,
 #vpn {
-  border: 1.4px solid rgba(134, 188, 66, 0.85);
-  background: rgba(134, 188, 66, 0.73);
+  border: 1.4px solid rgba(134, 188, 66, 0.92);
+  background: rgba(134, 188, 66, 0.85);
 }
 #canvas3,
 #canvas,

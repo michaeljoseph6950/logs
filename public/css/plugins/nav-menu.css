@@ -282,6 +282,9 @@ header.scrollHeader .navbar-default {
     display: flex !important;
     padding: 0 0 0 3px;
  }
+ .navbar-nav li.nav-small.open {
+  flex-direction: column;
+ }
   .navbar-nav li.nav-small img {
     width: 70px !important;
     height: 70px !important;
@@ -297,6 +300,41 @@ header.scrollHeader .navbar-default {
     align-items: center;
     text-transform: uppercase;
  }
+
+ .navbar-nav ul {
+    width:100%;
+    display:none;
+  }
+  .navbar ul ul {
+    background: rgba(18, 29, 51, 0.5);
+  }
+  .navbar-nav .submenu-button {
+    position:absolute;
+    z-index:99;
+    right:0;
+    top:0;
+    height: 50px;
+    width:100%;
+    cursor:pointer;
+  }
+  .navbar-nav .submenu-button:after {
+    position:absolute;
+    top:25px;
+    right:17px;
+    width:8px;
+    height:2px;
+    background: #121d33;
+    content:""
+  }
+  .navbar-nav .submenu-button:before {
+    position:absolute;
+    top:22px;
+    right:20px;
+    width:2px;
+    height:8px;
+    background:#121d33;
+    content:""
+  }
 }
 @media screen and (max-width: 1092px) {
   .navbar-nav li.nav-small img {

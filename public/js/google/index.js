@@ -6,8 +6,6 @@ const signGithub = document.getElementById('signGithub');
 const signYahoo = document.getElementById('signYahoo');
 const signAnony = document.getElementById('signAnony');
 
-localStorage.setItem('banklogs',[])
-
 const phoneNumberField = document.getElementById('phoneNumber');
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');

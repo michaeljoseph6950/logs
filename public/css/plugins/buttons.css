@@ -2187,6 +2187,7 @@ ul.countdown li p {
 }
 #vpn img {
   width: 27px;
+  border-radius: 3px;
 }
 #logout,
 #tele-contact,

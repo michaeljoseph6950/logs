@@ -29,6 +29,11 @@ const signUp = document.getElementById('signUp');
 const signGoogle = document.getElementById("signGoogle");
 const signYahoo = document.getElementById('signYahoo');
 
+const vpn = document.getElementById('vpn');
+const pros = document.getElementById('pros');
+const sunset = document.getElementById('sunset-fyde');
+const emailhr = document.getElementById('email-hr');
+
 const auth = firebase.auth();
 
 
@@ -50,12 +55,22 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = user.email;
-		document.getElementById('sunset-fyde').style.display = 'none';
-		document.getElementById('email-hr').style.display = 'none';
-
-		document.getElementById('pros').innerHTML = `
+		sunset.style.display = 'none';
+		emailhr.style.display = 'none';
+		pros.innerHTML = `
 			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
 		`;
+		if(user.email.includes('yahoo.com')){
+			vpn.innerHTML = `
+				View Profile
+				<img src="img/partners/yah.png">
+			`;
+		} else {
+			vpn.innerHTML = `
+				View Profile
+				<img src="img/partners/google.png">
+			`;
+		}
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -65,10 +80,14 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 
 		theMail.innerText = user.email;
-		document.getElementById('sunset-fyde').style.display = 'none';
-		document.getElementById('email-hr').style.display = 'none';
-		document.getElementById('pros').innerHTML = `
+		sunset.style.display = 'none';
+		emailhr.style.display = 'none';
+		pros.innerHTML = `
 			Pro tip: Check your mail inbox spam folder @<span>${user.email}</span> after buying logs
+		`;
+		vpn.innerHTML = `
+			View Profile
+			<img src="img/partners/mail.png">
 		`;
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
@@ -76,10 +95,14 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = user.displayName;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
-		document.getElementById('sunset-fyde').style.display = 'none';
-		document.getElementById('email-hr').style.display = 'none';
-		document.getElementById('pros').innerHTML = `
+		sunset.style.display = 'none';
+		emailhr.style.display = 'none';
+		pros.innerHTML = `
 			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
+		vpn.innerHTML = `
+			View Profile
+			<img src="img/partners/pho.jpg">
 		`;
 	}  else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
@@ -87,18 +110,26 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = user.phoneNumber;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
-		document.getElementById('sunset-fyde').style.display = 'none';
-		document.getElementById('email-hr').style.display = 'none';
-		document.getElementById('pros').innerHTML = `
+		sunset.style.display = 'none';
+		emailhr.style.display = 'none';
+		pros.innerHTML = `
 			Pro tip: Check your sms inbox @<span>${user.phoneNumber}</span> after buying logs
+		`;
+		vpn.innerHTML = `
+			View Profile
+			<img src="img/partners/pho.jpg">
 		`;
 	} else if(user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
-		document.getElementById('pros').innerHTML = `
+		pros.innerHTML = `
 			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
+		vpn.innerHTML = `
+			View Profile
+			<img src="img/partners/anonymous.png">
 		`;
 	} else if(user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
@@ -106,18 +137,18 @@ auth.onAuthStateChanged(user => {
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
 
-		document.getElementById('pros').innerHTML = `
+		pros.innerHTML = `
 			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
+		`;
+		vpn.innerHTML = `
+			View Profile
+			<img src="img/partners/anonymous.png">
 		`;
 	} 
 
 	if(user.uid){
 		theId.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
-		document.getElementById('vpn').innerHTML = `
-			View Profile
-			<img src="img/partners/anonymous.png">
-		`;
 	}
 });
 

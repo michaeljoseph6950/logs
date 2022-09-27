@@ -181,6 +181,7 @@ blink.high {
 }
 .money,
 #thetot1,
+#thelogs,
 .lesnar {
   border: 1.4px solid #03a9f5;
 }
@@ -283,6 +284,7 @@ blink.high {
 #settings,
 #showtoasts,
 #thetot1, 
+#thelogs,
 .money,
 .thevpn a.vbtn {
   background: rgb(192, 234, 253);

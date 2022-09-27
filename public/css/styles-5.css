@@ -181,6 +181,7 @@ blink.high {
 
 .money,
 #thetot1,
+#thelogs,
 .lesnar {
   border: 1.4px solid #fab702;
 }
@@ -281,6 +282,7 @@ blink.high {
 .scroll-down,
 #settings,
 #showtoasts,
+#thelogs,
 #thetot1, 
 .money,
 .thevpn a.vbtn {

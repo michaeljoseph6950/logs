@@ -102,13 +102,15 @@
     opacity: 0;
   }
 }
+#thelogs,
 #thetot, #thetot1 {
   font-size: 19px;
 }
+#thelogs,
 #thetot1 {
   display: flex !important;
 }
-.scroll-down, #thetot1, #exampleModal .money, .dropdown-toggle {
+.scroll-down, #thetot1, #exampleModal .money, .dropdown-toggle, #thelogs {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-name: Floating3;
@@ -701,6 +703,7 @@ select {
   border-right: none;
   border-top: none;
 }
+#thelogs,
 #thetot1 {
   font-weight: 700;
   font-size: 28px;
@@ -708,10 +711,12 @@ select {
   padding: 10px;
   color: #121d33;
 }
+#thelogs:hover,
 #thetot1:hover{
   border: 1.4px solid yellow !important;
 }
 @media (max-width: 768px) {
+  #thelogs,
   #thetot1 {
     font-weight: 700;
     font-size: 28px;
@@ -721,6 +726,7 @@ select {
  }
 }
 @media (max-width: 375px) {
+  #thelogs,
   #thetot1 {
     margin: 10px !important;
     margin-right: 7px !important;
@@ -1436,6 +1442,11 @@ td {
 #logsModal .modal-dialog {
   top: 10vh !important;
 }
+@media (max-width: 1092px) {
+  #logsModal .modal-dialog {
+    top: 15vh !important;
+  }
+}
 #logsModal .modal-dialog .modal-content,
 #profileModal .modal-dialog .modal-content{
   max-height:52% !important;
@@ -1810,6 +1821,7 @@ td {
   word-spacing: 17px;
   color: rgba(255, 255, 255, 0.3);
 }
+#thelogs img,
 #thetot1 img{
   width: 27px !important;
   height: 27px !important;

@@ -279,7 +279,6 @@ blink.high {
 .bg-bro {
   background-color: rgba(208, 173, 85, 1);
 }
-#vpn,
 .scroll-down,
 #settings,
 #showtoasts,
@@ -291,7 +290,9 @@ blink.high {
   box-shadow: 0 0 0 1px rgb(232, 214, 170);
   color: rgb(50, 53, 57) !important;
 }
-
+#vpn {
+  box-shadow: 0 0 0 1.4px rgb(232, 214, 170);
+}
 
 
 .modal-body div p,

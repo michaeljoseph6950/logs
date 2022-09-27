@@ -281,6 +281,7 @@ body {
 	top: 0;
 	text-transform: uppercase;
 	font-size: 57px;
+  text-shadow: 0 0 1.4px #121d33 !important;
 }
 .banner-words-wrapper b.is-visible {
 	position: relative;

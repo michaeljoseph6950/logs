@@ -15,6 +15,7 @@ body {
 }
 .index-p{
     color: #fff !important;
+	font-size: 21px !important;
 }
 #particles-js {
 	position: absolute !important;

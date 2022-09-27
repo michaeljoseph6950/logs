@@ -1,6 +1,7 @@
 let items = [];
 
 var table1 = jQuery('#example1').DataTable();
+var table3 = jQuery('#example3').DataTable();
 
 if(!localStorage.getItem('banklogs') || ((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
     document.getElementById('predat').style.display = 'flex';

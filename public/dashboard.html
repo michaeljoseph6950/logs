@@ -796,9 +796,9 @@
             </div>
             <div class="modal-body">
                 <li class="thevpn">
-                    <img src="img/partners/telegram.png">
-                    <a class="butn vbtn" href="https://t.me/carl97" target="_blank">
-                        Contact Info
+                    <img src="img/partners/bank.png">
+                    <a class="butn vbtn" data-bs-toggle="modal" data-bs-target="#logsModal">
+                        My Bank Logs
                     </a>
                 </li>
                 <hr class="thehr">
@@ -1024,6 +1024,40 @@
                     Checkout: $0
                 </a>
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="logsModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Logs Purchased
+                </h4>
+                <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered"  id="example3">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Bank</th>
+                                <th>Balance</th>
+                                <th>Account</th>
+                                <th>Download</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>      
+                    </table>
+                </div>
+            </div>    
         </div>
     </div>
 </div>

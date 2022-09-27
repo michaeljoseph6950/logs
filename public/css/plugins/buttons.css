@@ -1132,11 +1132,13 @@ td {
   margin: 0 !important;
   padding: 0 !important;
 }
+#example3,
 #example1 {
   font-weight: 600;
   padding: 0;
   margin: 0;
 }
+#example3 .table-primary,
 #example1 .table-primary {
   text-transform: uppercase;
 }
@@ -1431,6 +1433,9 @@ td {
   overflow-y: hidden !important;
   height: 100% !important 
 }
+#logsModal .modal-dialog {
+  top: 10vh !important;
+}
 #logsModal .modal-dialog .modal-content,
 #profileModal .modal-dialog .modal-content{
   max-height:52% !important;
@@ -1531,6 +1536,9 @@ td {
 #loginModal .modal-header h4.modal-title, #phoneModal .modal-header h4.modal-title, #coModal .modal-header h4.modal-title, #vpnModal .modal-header h4.modal-title, #exampleModal .modal-header h4.modal-title, #acModal .modal-header h4.modal-title {
   font-weight: 600;
 }
+#logsModal .modal-header h4 {
+  font-size: 28px !important;
+}
 #loginModal .modal-header .close img, #phoneModal .modal-header .close img, #coModal .modal-header .close img, #vpnModal .modal-header .close img, #exampleModal .modal-header .close img,  #acModal .modal-header .close img {
   width: 30px;
   opacity: 0.7;
@@ -1612,6 +1620,7 @@ td {
     transform: scale(1);
  }
 }
+#example3 tbody td:first-child img,
 #example1 tbody td:first-child img {
   width: 50px !important;
 }

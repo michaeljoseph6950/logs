@@ -542,7 +542,7 @@ fetch('https://ipapi.co/json/')
 	document.getElementById('label-ip').innerHTML = `
 		IP address: <span>${data.ip}</span> ${data.country_calling_code} <img src="https://countryflagsapi.com/png/${data.country_code}" id="the-flag" />
 	`;
-	document.getElementById('the-ip').innerHTML = `${data.city}, ${data.country_name}, ${data.org}, ${data.region}`;
+	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}, ${data.city}, ${data.country_name}`;
 });
 
 document.getElementById("thebodyz").oncontextmenu = function() {

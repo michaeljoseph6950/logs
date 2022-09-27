@@ -247,3 +247,7 @@ section .dataTables_wrapper dataTables_length {
 		width: 46% !important;
 	}
 }
+#the-date {
+	overflow-x: hidden !important;
+	white-space: normal !important;
+}

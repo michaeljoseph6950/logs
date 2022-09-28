@@ -109,6 +109,7 @@
 #thelogs,
 #thetot1 {
   display: flex !important;
+  cursor: pointer !important;
 }
 .scroll-down, #thetot1, #exampleModal .money, .dropdown-toggle, #thelogs {
   animation-duration: 1s;
@@ -2421,6 +2422,9 @@ ul.countdown li p {
   line-height: 35px;
   white-space: nowrap !important;
   padding: 10px 15px;
+}
+.modal-dialog .butn.home-btn {
+  padding: 7.5px 15px !important;
 }
 
 #loginModal .butn.home-btn {

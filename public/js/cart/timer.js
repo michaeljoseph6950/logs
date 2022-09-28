@@ -24,7 +24,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     } 
                     else if( width <= 400) {
@@ -35,7 +35,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     } 
                     else {
@@ -45,7 +45,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     }
                 }
@@ -71,7 +71,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     } 
                     else if( width <= 400) {
@@ -82,7 +82,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     } 
                     else {
@@ -92,7 +92,7 @@ function move(){
                         if(seconds < 10){
                             seconds = '0'+seconds
                         }
-                        elemj.style.width = (width/9) + "%";
+                        elemj.style.width = (width/6) + "%";
                         document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                     }
                 }

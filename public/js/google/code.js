@@ -53,6 +53,8 @@ auth.onAuthStateChanged(user => {
 	if (user.displayName && user.email) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = user.email;
 		sunset.style.display = 'none';
@@ -77,6 +79,8 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder.value = theaddress;
 		jinaHolder3.value = theaddress;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 
 		theMail.innerText = user.email;
@@ -93,6 +97,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		jinaHolder3.value = user.displayName;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
 		sunset.style.display = 'none';
@@ -108,6 +114,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		jinaHolder3.value = user.phoneNumber;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
 		sunset.style.display = 'none';

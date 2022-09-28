@@ -49,6 +49,7 @@ auth.onAuthStateChanged(user => {
 	}
 	if (user.displayName && user.email) {
 		jinaHolder.value = user.displayName;
+		jinaHolder.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		emailInvoice.style.display = 'flex';
 		yourEmail.innerText = user.email;
@@ -56,16 +57,19 @@ auth.onAuthStateChanged(user => {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		jinaHolder.value = theaddress;
+		jinaHolder.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		emailInvoice.style.display = 'flex';
 		yourEmail.innerText = user.email;
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
+		jinaHolder.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		phoneInvoice.style.display = 'flex';
 		yourPhone.innerText = user.phoneNumber;
 	} else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
+		jinaHolder.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		phoneInvoice.style.display = 'flex';
 		yourPhone.innerText = user.phoneNumber;

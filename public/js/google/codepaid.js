@@ -55,6 +55,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
         jinaHolder3.value = user.displayName;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 
 			Send $70 to complete your download.
@@ -88,6 +90,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = theaddress;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
         jinaHolder3.value = theaddress;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 
 			Send $70 to complete your download.
@@ -111,6 +115,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
         jinaHolder3.value = user.displayName;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 
 			Send $70 to complete your download.
@@ -133,6 +139,8 @@ auth.onAuthStateChanged(user => {
 	} else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
         jinaHolder3.value = user.phoneNumber;
+		jinaHolder.readOnly = true;
+		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		paidText.innerHTML = `
 			The cost of acquiring tools for spamming, and also the process itself is expensive, 

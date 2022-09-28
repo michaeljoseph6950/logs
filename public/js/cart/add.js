@@ -236,7 +236,7 @@ function updateCartTotal() {
             } 
         });
     }
-    localStorage.setItem('time-left',900)
+    localStorage.setItem('time-left',600)
 }
 
 
@@ -254,5 +254,5 @@ function updateCartTotal2() {
     document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
-    localStorage.setItem('time-left',900)
+    localStorage.setItem('time-left',600)
 }

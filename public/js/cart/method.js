@@ -110,6 +110,6 @@ function updateCartTotal() {
 
 
     document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
-    localStorage.setItem('time-left',900);
+    localStorage.setItem('time-left',600);
 }
 

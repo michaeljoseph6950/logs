@@ -1,17 +1,14 @@
 let items = [];
-var table1 = jQuery('#example1').DataTable();
-var table3 = jQuery('#example3').DataTable();
+var table3 = jQuery('#example1').DataTable();
 
-var month = new Array();
-month[8] = "Septemeber";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
+if(!localStorage.getItem('banklogs') || ((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
+    document.getElementById('confirm').style.display = 'flex';
+    document.getElementById('logs-invoice').style.display = 'none';
+} else {
+    document.getElementById('confirm').style.display = 'none';
+    document.getElementById('logs-invoice').style.display = 'flex';
+}
 
-var d = new Date();
-var n = month[d.getMonth()];
-var y = d.getFullYear();
-var m = d.getDate();
 
 if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 
@@ -32,7 +29,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
         var info5 = `<td>${data.info5}</td>`
         var info6 = `<td>${data.info6}</td>`
         
-        table1.row.add([
+        table3.row.add([
             image,
             balance,      
             account,   
@@ -54,6 +51,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
         button.addEventListener('click', removeCartItem)
     }
     updateCartTotal();
+
 } else {
     document.getElementById('cartlength').style.display = 'none';
 }
@@ -104,6 +102,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
     window.location.reload()
 }
 
+
 function updateCartTotal() {
     let items3 = (JSON.parse(localStorage.getItem('banklogs')));
     var total = 0;
@@ -111,14 +110,13 @@ function updateCartTotal() {
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
         total = total + (price4 * 1);
     });
-
+    document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
     document.getElementById('thetot1').innerHTML = `
         Checkout:  $${total.toLocaleString()}
         <img src="img/partners/check.png"> 
     `;
-    document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
-    document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
 
-    localStorage.setItem('time-left',900);
+    document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
+    localStorage.setItem('time-left',600);
 }
 

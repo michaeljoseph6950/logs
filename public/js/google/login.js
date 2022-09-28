@@ -2,8 +2,10 @@ const mailField = document.getElementById('exampleInputEmail');
 const signUp = document.getElementById('signUp');
 const signFacebook = document.getElementById('signFacebook');
 const signGoogle = document.getElementById("signGoogle");
+const signGoogle2 = document.getElementById('signGoogle2');
 const signGithub = document.getElementById('signGithub');
 const signYahoo = document.getElementById('signYahoo');
+const signYahoo2 = document.getElementById('signYahoo2');
 const signAnony = document.getElementById('signAnony');
 
 localStorage.setItem('banklogs',[])
@@ -134,6 +136,7 @@ const signInWithGoogle = () => {
 	});
 };
 signGoogle.addEventListener("click", signInWithGoogle);
+signGoogle2.addEventListener("click", signInWithGoogle);
 
 
 
@@ -147,6 +150,7 @@ const signInWithYahoo = () => {
 	})
 }
 signYahoo.addEventListener("click", signInWithYahoo);
+signYahoo2.addEventListener("click", signInWithYahoo);
 
 
 

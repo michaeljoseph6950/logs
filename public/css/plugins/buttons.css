@@ -1583,17 +1583,12 @@ td {
   text-align: center !important;
 }
 @media screen and (min-width: 1025px) {
-  .modal-content {
+  .modal-dialog {
     max-width: 30vw !important;
   }
   #vpnModal .modal-content{
     max-width: 28vw !important;
   }
-  #logsModal .modal-content,
-  #profileModal .modal-content {
-    min-width: 97vw !important;
-    margin: 1.75rem auto;
- }
 }
 #vpnModal .modal-body {
   padding: 0 7px !important;

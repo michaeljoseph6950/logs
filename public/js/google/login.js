@@ -35,7 +35,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.darkweb.cx',
+		url: 'https://www.logins.id',
 		handleCodeInApp: true,
 	};
 

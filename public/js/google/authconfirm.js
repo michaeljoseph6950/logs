@@ -90,7 +90,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.darkweb.cx/confirm',
+		url: 'https://www.logins.id/confirm',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {

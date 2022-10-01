@@ -298,7 +298,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.darkweb.cx/home',
+		url: 'https://www.logins.id/home',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {
